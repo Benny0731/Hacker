@@ -1,0 +1,13 @@
+使用环境 kali 2018 4.15.0-kali2-amd64
+
+export CC="gcc -fno-stack-protector -z execstack -no-pie -Wl,-z,norelro";./configure
+make
+make install
+
+./../include/Xaw.h:33:31: fatal error: X11/Xaw/Cardinals.h: No such file or directory
+apt-get install libxaw7 libxaw7-dev
+
+./checksec --file
+/usr/games/crossfire/bin/crossfire
+RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH    FORTIFY    Fortified Fortifiable  FILE
+Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   Yes     0        38    

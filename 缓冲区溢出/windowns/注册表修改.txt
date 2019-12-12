@@ -1,0 +1,9 @@
+# 打开xp下的远程桌面
+echo Windows Registry Editor Version 5.00>3389.reg
+echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer]>>3389.reg
+echo "fDenyTSConnections"=dword:00000000>>3389.reg
+echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer\Wds\rdpwd\Tds\tcp]>>3389.reg
+echo "PortNumber"=dword:00000d3d>>3389.reg
+echo [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp]>>3389.reg
+echo "PortNumber"=dword:00000d3d>>3389.reg
+regedit /s 3389.reg
